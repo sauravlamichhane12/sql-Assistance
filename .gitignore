@@ -161,4 +161,6 @@ cython_debug/
 
 .DS_Store
 
-.streamlit/secrets.toml
+.streamlit/secrets.tomlargon-potential-437011-q2-96377b8e6c27.json
+*.json # Also ignore all JSON files to be safe
+.env # Add .env to ignore environment files
