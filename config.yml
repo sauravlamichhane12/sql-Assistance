@@ -1,0 +1,42 @@
+databases:
+  HRM-URANUS:
+    server: "172.25.50.250"
+    database: "HRM-URANUS"
+    user: "sa"
+    password: "Ur@nu$2013"
+    driver: "ODBC Driver 17 for SQL Server"
+  
+  eFlowSystem:
+    server: "172.25.50.250"
+    database: "eFlowSystem"
+    user: "sa"
+    password: "Ur@nu$2013"
+    driver: "ODBC Driver 17 for SQL Server"
+  
+  SKBBL_FINAL:
+    server: "172.25.50.250"
+    database: "SKBBL_FINAL"
+    user: "sa"
+    password: "Ur@nu$2013"
+    driver: "ODBC Driver 17 for SQL Server"
+  
+  UraCare_Live:
+    server: "172.25.50.250"
+    database: "UraCare_Live"
+    user: "sa"
+    password: "Ur@nu$2013"
+    driver: "ODBC Driver 17 for SQL Server"
+  
+  SWBBL_CBS:
+    server: "172.25.50.250"
+    database: "SWBBL_CBS"
+    user: "sa"
+    password: "Ur@nu$2013"
+    driver: "ODBC Driver 17 for SQL Server"
+  
+  eFlowSystem_Live:
+    server: "172.25.50.250"
+    database: "eFlowSystem_Live"
+    user: "sa"
+    password: "Ur@nu$2013"
+    driver: "ODBC Driver 17 for SQL Server" 
