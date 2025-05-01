@@ -18,7 +18,8 @@ You can configure secrets in `.streamlit/secrets.toml` and access them in your a
 # Run
 
 ```bash
-python3 app.py ```
+python3 app.py
+```
 
 
 ## License
