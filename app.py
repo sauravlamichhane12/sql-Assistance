@@ -7,6 +7,7 @@ from functools import wraps
 from datetime import datetime
 from typing import Tuple
 import logging
+from dotenv import load_dotenv
 
 import json
 
@@ -17,6 +18,21 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
+
+# Load environment variables
+load_dotenv()
+
+# Database configurations - move to environment variables
+DATABASES = {
+    "chinook": {
+        "host": os.getenv("DB_HOST", "localhost"),
+        "user": os.getenv("DB_USER", "root"),
+        "password": os.getenv("DB_PASSWORD", "root1234"),
+        "database": "chinook",
+        "port": int(os.getenv("DB_PORT", 3306))
+    },
+    # ... other databases
+}
 
 def db_connection_required(f):
     @wraps(f)
@@ -265,6 +281,7 @@ def add_training_data():
     except Exception as e:
         app.logger.error(f"Training error: {str(e)}")
         return jsonify({"error": str(e)}), 500
+
 @app.route('/upload-json', methods=['POST'])
 def upload_json():
     if 'jsonFile' not in request.files:
@@ -294,5 +311,6 @@ def upload_json():
         return jsonify({'message': 'Training completed successfully'}), 200
     except Exception as e:
         return jsonify({'error': f'Training failed: {str(e)}'}), 500
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
